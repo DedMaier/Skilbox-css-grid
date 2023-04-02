@@ -9,6 +9,8 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify-es').default;
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
+const webpack = require("webpack");
+const webpackStream = require("webpack-stream");
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util')
 const notify = require('gulp-notify');
@@ -137,4 +139,4 @@ watch('./src/fonts/**.ttf', fontsStyle);
 exports.styles = styles;
 exports.scripts = scripts;
 exports.htmlMinify = htmlMinify;
-exports.default = series(clean, resources, htmlMinify, fonts, scripts, styles, images, fontsStyle, watchFiles);
+exports.default = series(clean, resources, htmlMinify, fonts, scripts, styles, images, fontsStyle, watchFiles );
